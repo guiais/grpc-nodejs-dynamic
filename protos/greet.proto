@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package greet;
+
+service GreetService {
+  // Unary API
+  rpc Greet(GreetingRequest) returns (GreetingResponse) {}
+}
+
+message Greeting {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+message GreetingRequest {
+  Greeting greeting = 1;
+}
+
+message GreetingResponse {
+  string result = 1;
+}
